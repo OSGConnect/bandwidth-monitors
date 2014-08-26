@@ -55,7 +55,7 @@ def application(environ, start_response):
     if 'date' in query_dict:
         try:
             record['date'] = datetime.datetime.fromtimestamp(float(escape(query_dict['date'][0])))
-         except:
+        except:
             record['date'] = datetime.datetime.now()
     else:
         record['date'] = datetime.datetime.now()
