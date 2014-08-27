@@ -6,6 +6,8 @@ import datetime
 
 import elasticsearch
 
+DEBUG = 1
+
 def get_db_client():
     """ Instantiate DB client and pass connection back """
 
@@ -69,6 +71,8 @@ def application(environ, start_response):
     response_body = 'Record inserted'
     client = get_db_client()        
     try:
+        if DEBUG:
+            print record
         insert_record(client, record)
     except Exception, e:
         response_body = "Error %s while recording %s" % (e, record)
