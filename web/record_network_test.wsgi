@@ -43,11 +43,11 @@ def application(environ, start_response):
     else:
         record['host'] = ''
     if 'bandwidth' in query_dict:
-        record['bandwidth'] = escape(query_dict['bandwidth'][0])
+        record['bandwidth'] = float(escape(query_dict['bandwidth'][0]))
     else:
         record['bandwidth'] = 0.0
     if 'latency' in query_dict:
-        record['latency'] = escape(query_dict['latency'][0])
+        record['latency'] = float(escape(query_dict['latency'][0]))
     else:
         record['latency'] = 0.0
     if 'site' in query_dict:

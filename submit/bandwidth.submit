@@ -1,7 +1,7 @@
 universe = vanilla
 executable = testnetwork.sh
 +ProjectName = "OSG-Staff"
-transfer_input_files =  getbandwidth.py
+transfer_input_files =  testnetwork.py
 should_transfer_files = YES
 when_to_transfer_output = ON_EXIT
 output = /tmp/check_bandwidth/results.out.$(Cluster).$(Process)
